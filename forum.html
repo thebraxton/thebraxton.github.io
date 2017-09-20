@@ -53,4 +53,5 @@ post_topic      INT(8) NOT NULL,
 post_by     INT(8) NOT NULL,
 PRIMARY KEY (post_id)
 ) TYPE=INNODB;ALTER TABLE topics ADD FOREIGN KEY(topic_cat) REFERENCES categories(cat_id) ON DELETE CASCADE ON UPDATE CASCADE;
+</php>
 
