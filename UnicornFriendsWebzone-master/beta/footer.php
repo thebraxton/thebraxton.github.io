@@ -1,0 +1,2 @@
+<?php require_once $_SERVER["DOCUMENT_ROOT"] . "util.php"; util_include_set(); ?>
+<div align="center"><font size="-1"><p>A webzone by <a href="http://youtube.com/jerbearschannel" target="_blank">JerBear</a> and <a href="https://twitter.com/maymay_man" target="_blank">maymayman</a>. <a href="https://github.com/JerBear3/UnicornFriendsWebzone" target="_blank">Bug reports/source code (coming soon)</a></p></font></div>
