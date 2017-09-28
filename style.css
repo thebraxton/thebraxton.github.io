@@ -1,0 +1,186 @@
+<?php require_once $_SERVER["DOCUMENT_ROOT"] . "util.php"; util_session_start(); ?>
+@font-face {
+    font-family: ComicsansMS;
+    src: url("/cs.ttf");
+}
+
+* {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+    font-family: ComicsansMS;
+}
+
+input[type="file" i]::-webkit-file-upload-button {
+    font-family:ComicsansMs;
+}
+
+.right {
+    float: right;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+    background-image: url("/bg.png");
+}
+
+.wrapper {
+	background-color: #FFF;
+	margin: 0px auto;
+	width: 800px;
+	min-height: 100%;
+}
+
+.content {
+	overflow: auto;
+    padding-bottom: 1em;
+}
+
+.footer {
+	position: relative;
+	margin: -1em auto 0px;
+	width: 800px;
+	height: 1em;
+	clear: both;
+}
+
+.chatbox {
+    vertical-align: top;
+    overflow: scroll;
+    font-size: 93%;
+    width: 600px;
+    height: 398px;
+}
+
+.chatonline {
+	word-break: break-all;
+	vertical-align: top;
+    overflow: scroll;
+    font-size: 93%;
+    height: 398px;
+}
+
+.archive {
+    width: 798px;
+    border: 1px solid;
+    overflow: scroll;
+    font-size: 93%;
+}
+
+.cancelcs {
+    font-family: Arial !important;
+}
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+#leftad {
+    float: left;
+    position: absolute;
+    top: 10%;
+}
+
+#rightad {
+    float: right;
+    position: absolute;
+    top: 10%;
+}
+
+@media only screen and (max-width: 1119px) {
+    #leftad {
+        display: none;
+    }
+    
+    #rightad {
+        display: none;
+    }
+}
+
+<?php
+    if(!$_SESSION["loggedin"])
+    {
+        $color = "#DF219D";
+    }
+    else
+    {
+        $db = util_mysqli_login();
+		if($db->connect_error)
+		    $color = "#DF219D";
+		else
+            $color = util_get_usercolor(util_mysqli_login(), $_SESSION["username"]);
+        
+        if(strcasecmp($color, "black") == 0)
+            $color = "#DF219D";
+    }
+    
+    if(strcasecmp($color, "rainbow") == 0)
+        echo "a:link, a:visited, a:active, .rainbow {\n";
+    else
+        echo ".rainbow {\n";
+?>
+	-webkit-animation: rainbow 3s linear infinite;
+	-moz-animation: rainbow 3s linear infinite;
+	animation: rainbow 3s linear infinite;
+}
+
+<?php
+    if(strcasecmp($color, "rainbow") != 0)
+    {
+?>
+a:link, a:visited, a:active {
+   color: <?php echo $color; ?>;
+}
+
+<?php
+    }
+?>
+a:hover {
+    color: black;
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+     animation-play-state: paused;
+}
+
+@keyframes rainbow {
+	0% { color: red; }
+	14% { color: orange; }
+	28% { color: yellow; }
+	42% { color: green; }
+	56% { color: aqua; }
+	70% { color: blue; }
+	84% { color: magenta; }
+	98% { color: red; }
+}
+
+@-moz-keyframes rainbow {
+	0% { color: red; }
+	14% { color: orange; }
+	28% { color: yellow; }
+	42% { color: green; }
+	56% { color: aqua; }
+	70% { color: blue; }
+	84% { color: magenta; }
+	98% { color: red; }
+}
+
+@-webkit-keyframes rainbow {
+	0% { color: red; }
+	14% { color: orange; }
+	28% { color: yellow; }
+	42% { color: green; }
+	56% { color: aqua; }
+	70% { color: blue; }
+	84% { color: magenta; }
+	98% { color: red; }
+}
