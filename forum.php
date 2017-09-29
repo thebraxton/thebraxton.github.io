@@ -21,7 +21,7 @@
   </div>
 </form>
   </html>
-<php>
+<?php>
   CREATE TABLE users (
 user_id     INT(8) NOT NULL AUTO_INCREMENT,
 user_name   VARCHAR(30) NOT NULL,
@@ -53,5 +53,5 @@ post_topic      INT(8) NOT NULL,
 post_by     INT(8) NOT NULL,
 PRIMARY KEY (post_id)
 ) TYPE=INNODB;ALTER TABLE topics ADD FOREIGN KEY(topic_cat) REFERENCES categories(cat_id) ON DELETE CASCADE ON UPDATE CASCADE;
-</php>
+
 
