@@ -1,0 +1,11 @@
+h1{
+text-align: center
+}
+
+div {
+width: 300px;
+border:25px #E6DBFF;
+padding: 25px;
+margin:25px;
+
+}
