@@ -1,5 +1,4 @@
-<?php require_once $_SERVER["DOCUMENT_ROOT"] . "util.php"; util_session_start(); ?>
-@font-face {
+font-face {
     font-family: ComicsansMS;
     src: url("/cs.ttf");
 }
